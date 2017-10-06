@@ -1,0 +1,15 @@
+replace('ORIGINAL NAME','NAME WE USED'[)
+
+
+replace('No_of_Persons_Injured','_Injured_')
+replace('No_of_Persons_Died','_Died_')
+replace('No_of_Cases','_Cases_')
+replace('Collapse_of_Structure','COS_')
+replace('Drowning_Accidental_Falls_into_Waterbody','Drowing_from_falling')
+replace('Dwelling_House/Residential_building','Residential')
+replace('Official/Commercial_Building','Commercial')
+replace('Accidental_Explosion_','')
+replace('Armed_Forces/Police/CPMF','Law_agencies')
+replace('Falls_from_Vehicles_Automobile_like_Bus,_Trucks,_etc','Falls_from_Bus/Trucks')
+replace('Accidental_Fire_Cooking_Gas_Cylinder/Stove_Burst','Cooking_Gas_Cylinder/Stove_Burst')
+replace('Accidental_Fire_Electrical_Short_Circuit','Short_Circuit_Fire')
