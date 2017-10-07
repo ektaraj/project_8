@@ -13,3 +13,44 @@ replace('Armed_Forces/Police/CPMF','Law_agencies')
 replace('Falls_from_Vehicles_Automobile_like_Bus,_Trucks,_etc','Falls_from_Bus/Trucks')
 replace('Accidental_Fire_Cooking_Gas_Cylinder/Stove_Burst','Cooking_Gas_Cylinder/Stove_Burst')
 replace('Accidental_Fire_Electrical_Short_Circuit','Short_Circuit_Fire')
+
+
+Andhra Pradesh	- AP
+Arunachal Pradesh	- AR
+Assam	- AS
+Bihar	- BR
+Chhattisgarh	- CT
+Goa	- GA
+Gujarat	- GJ
+Haryana	- HR
+Himachal Pradesh	- HP
+Jammu and Kashmir	- JK
+Jharkhand	- JH
+Karnataka	- KA
+Kerala	- KL
+Madhya Pradesh	- MP
+Maharashtra	- MH
+Manipur	 - MN
+Meghalaya	- ML
+Mizoram	- MZ
+Nagaland	 - NL
+Odisha (Orissa)	- OR
+Punjab	- PB
+Rajasthan	- RJ
+Sikkim	- SK
+Tamil Nadu	- TN
+Telangana - TL
+Tripura	IN-TR
+Uttar Pradesh	 - UP
+Uttarakhand	- UT
+West Bengal	- WB
+
+Andaman and Nicobar Islands	- AN
+Chandigarh	- CH
+Dadra and Nagar Haveli	- DN
+Chhattisgarh	- CT
+Lakshadweep	- LD
+National Capital Territory of Delhi	- DL
+Puducherry	- PY
+
+
