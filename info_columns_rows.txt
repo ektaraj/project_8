@@ -14,6 +14,7 @@ replace('Falls_from_Vehicles_Automobile_like_Bus,_Trucks,_etc','Falls_from_Bus/T
 replace('Accidental_Fire_Cooking_Gas_Cylinder/Stove_Burst','Cooking_Gas_Cylinder/Stove_Burst')
 replace('Accidental_Fire_Electrical_Short_Circuit','Short_Circuit_Fire')
 
+STATES/UTs AND THEIR 2-LETTER CODES
 
 Andhra Pradesh	- AP
 Arunachal Pradesh	- AR
