@@ -1,0 +1,99 @@
+---
+title: "Accidents"
+author: "Ekta Raj"
+date: "October 9, 2017"
+output: html_document
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library('ggplot2')
+library('ggiraph')
+library('GGally')
+library('dplyr')
+library('plyr')
+library('gridExtra')
+library('grid')
+library('readr')
+library('reshape2')
+library('corrplot')
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+death <- rename(death, c("State/UT_Name" = "State_UT_Name"))
+death$Category <- factor(death$Category)
+death$State_UT_Name <- factor(death$State_UT_Name)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+str(death, attr = FALSE)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(death, aes(x = State_UT_Name, y = COS_Total_Cases, fill = COS_Total_Injured_Total))+
+  geom_bar(stat = "identity", position = "stack")
+
+
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+injured <- death$COS_Total_Injured_Total
+died <- death$COS_Total_Died_Total
+st <- death$State_UT_Name
+
+df <- data.frame(injured, died, st)
+df <- melt(df, id.vars = 'st', variable_name = "variable")
+df <- subset(df, injured>0 & died > 0)
+
+ggplot(df, aes(x = st, y = value, fill = variable))+
+  geom_bar(stat = "identity")
+
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+air <- select(death, "State_UT_Name", "Electrocution_Cases",
+              "Other_Cases", ends_with("_Total_Cases"))
+
+
+
+
+air <- melt(air, id.vars = 'State_UT_Name')
+air <- subset(air, value > 0)
+
+
+
+ggplot(air, aes(x= State_UT_Name, y=value, fill = variable))+
+  geom_bar(stat = "identity")+
+  coord_flip()
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+total_unn <- select(death, "Category", "State_UT_Name", starts_with("Total_Unnatural"))
+total_unn <- subset(total_unn, Total_Unnatural_Accidents_Cases > mean(Total_Unnatural_Accidents_Cases))
+
+ggplot(total_unn, aes(x = State_UT_Name,
+                  y = Total_Unnatural_Accidents_Cases, 
+                  fill = Total_Unnatural_Accidents_Died_Total))+
+  geom_col()+
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+male <- total_unn$Total_Unnatural_Accidents_Died_Male
+female <- total_unn$Total_Unnatural_Accidents_Died_Female
+trans <- total_unn$Total_Unnatural_Accidents_Died_Transgender
+
+df2 <- data.frame(male, female, trans, st)
+df2 <- melt(df2, id.vars = "st")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(df2)+
+  geom_col( aes(x=st, y=value, fill = variable))
+```
